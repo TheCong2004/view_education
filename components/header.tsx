@@ -74,7 +74,7 @@ export default function Header({
           <SearchBar onSelectVideo={onSelectVideo} onSearch={onSearch} />
 
           {/* Cột Phải: Thông báo & Profile */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-2 md:gap-5">
             {/* Nút Thông báo */}
             <button className="relative p-2 text-gray-500 hover:bg-gray-100 rounded-full transition-colors">
               <Bell className="w-5 h-5" />
@@ -83,28 +83,28 @@ export default function Header({
             </button>
 
             {/* Dấu gạch dọc phân cách */}
-            <div className="h-8 w-px bg-gray-200"></div>
+            <div className="h-8 w-px bg-gray-200 hidden md:block"></div>
 
             {/* Khu vực User Profile */}
             <div className="relative" ref={dropdownRef}>
               <button 
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-3 cursor-pointer hover:bg-gray-50 p-1.5 rounded-lg transition-colors"
+                className="flex items-center gap-2 md:gap-3 cursor-pointer hover:bg-gray-50 p-1.5 rounded-lg transition-colors"
               >
                 
                 {/* Avatar với Lottie animation */}
-                <div className="w-10 h-10 rounded-full flex items-center justify-center relative bg-[#ec4899]">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center relative bg-[#ec4899] flex-shrink-0">
                   <DotLottieReact
                     src="/animation/test.lottie"
                     loop
                     autoplay
-                    style={{ width: '140%', height: '140%', position: 'absolute', zIndex: 100 }}
+                    style={{ width: '140%', height: '140%', position: 'absolute', zIndex: 50 }}
                   />
                   <span className="text-white font-medium text-lg relative z-10">C</span>
                 </div>
 
-                {/* Thông tin User */}
-                <div className="flex flex-col">
+                {/* Thông tin User - ẩn trên mobile */}
+                <div className="hidden md:flex flex-col">
                   <div className="flex items-center gap-2">
                     <span className="font-semibold font-Inter text-gray-800 text-sm">••••••</span>
                     {/* Badge FREE màu xanh */}
@@ -125,12 +125,12 @@ export default function Header({
                 </div>
 
                 {/* Icon mũi tên thả xuống */}
-                <ChevronDown className={`w-4 h-4 text-pink-500 ml-1 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 text-pink-500 ml-1 transition-transform hidden md:block ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                <div className="absolute right-0 mt-2 w-80 md:w-72 bg-white border border-gray-200 rounded-lg shadow-lg z-50 mx-2 md:mx-0 max-w-[calc(100vw-16px)]">
                   {/* Mã khách hàng */}
                   <div className="p-4 border-b border-gray-100">
                     <div className="flex items-center gap-2 mb-2">
