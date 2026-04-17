@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 View Education Platform
 
-## Getting Started
+Một nền tảng học trực tuyến hiện đại được xây dựng với **Next.js 14**, **TypeScript**, và **Tailwind CSS**. Cung cấp trải nghiệm học tập tương tác với video player, sidebar khóa học, và tracking tiến độ.
 
-First, run the development server:
+## ✨ Tính Năng
+
+- **📹 Video Player YouTube**: Nhúng trực tiếp video YouTube với iframe
+- **📚 Quản Lý Khóa Học**: Organize các bài học theo khóa học khác nhau
+- **🎬 Thumbnail YouTube**: Hiển thị thumbnail hình ảnh từ YouTube API
+- **📊 Tracking Tiến Độ**: Vòng tròn progress động cập nhật theo khóa học
+- **🔄 Auto-Update Header**: Header tự động cập nhật tên khóa học khi scroll
+- **👆 Click để Chuyển Video**: Click vào bài học để phát video tương ứng
+- **📱 Responsive Design**: Hỗ trợ mobile, tablet, desktop
+- **🎨 Sticky Header & Sidebar**: Fixed positioning cho video player và sidebar header
+- **⏱️ Thời Lượng Video**: Hiển thị tổng thời lượng của từng khóa học
+- **🏷️ Tags**: FREE / PRO badges cho từng bài học
+
+## 🚀 Cách Chạy
+
+### Yêu Cầu
+- **Node.js**: v18 hoặc cao hơn
+- **npm** hoặc **yarn**
+
+### Bước Cài Đặt
 
 ```bash
+# 1. Clone repository
+cd wiew_education
+
+# 2. Cài đặt dependencies
+npm install
+
+# 3. Chạy development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 4. Mở trình duyệt
+# Truy cập http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build Production
+```bash
+npm run build
+npm run start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Cấu Trúc Dự Án
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+wiew_education/
+├── app/                          # Next.js app directory
+│   ├── layout.tsx               # Layout chính
+│   ├── page.tsx                 # Trang chủ
+│   └── globals.css              # CSS global
+├── components/                   # React components
+│   ├── data.ts                  # Dữ liệu khóa học & bài học
+│   ├── EducationPlatform.tsx    # Component chính, state management
+│   ├── header.tsx               # Header với progress circle
+│   └── Sidebar.tsx              # Sidebar danh sách khóa học
+├── public/                       # Static assets
+├── package.json                 # Dependencies
+├── tsconfig.json                # TypeScript config
+├── tailwind.config.ts           # Tailwind CSS config
+├── next.config.ts               # Next.js config
+└── README.md                    # File hướng dẫn này
+```
